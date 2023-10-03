@@ -6,6 +6,7 @@ type ButtonProps = {
   type: ButtonType;
   onClick: () => void;
   title: string;
+  disabled?: boolean;
   children: React.ReactNode;
 };
 
@@ -24,13 +25,20 @@ const getButtonClassName = (type: ButtonType) => {
   return className;
 };
 
-export const Button: FC<ButtonProps> = ({ type, onClick, title, children }) => {
+export const Button: FC<ButtonProps> = ({
+  type,
+  onClick,
+  title,
+  disabled,
+  children,
+}) => {
   return (
     <button
       type="button"
       className={getButtonClassName(type)}
       onClick={onClick}
       title={title}
+      disabled={disabled}
     >
       {children}
     </button>
