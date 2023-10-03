@@ -1,12 +1,7 @@
 import { useVideoStore } from "../../utils/state";
-import { FullScreen } from "../fullscreen/fullscreen";
 import { Rangeslider } from "../rangeslider/rangeslider";
-import { SoundToggler } from "../soundToggler/soundToggler";
-import { VideoFlip } from "../videoFlip/videoFlip";
-import { Play } from "../controls/play";
-import { Rewind } from "../controls/rewind";
-import { Forward } from "../controls/forward";
 import { BigPlay } from "../controls/bigPlay";
+import { Controls } from "../controls/controls";
 
 type AnalyzerProps = {
   src: string;
@@ -33,18 +28,7 @@ export const Analyzer = ({ src, width, height }: AnalyzerProps) => {
     <div className="analyzer" style={videoSize}>
       <div className="dock">
         <Rangeslider />
-        <div className="controls">
-          <div className="controls__items">
-            <Play />
-            <Rewind />
-            <Forward />
-          </div>
-          <div>
-            <SoundToggler />
-            <VideoFlip />
-            <FullScreen />
-          </div>
-        </div>
+        <Controls />
       </div>
       <div className="video-container">
         <BigPlay />
