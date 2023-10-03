@@ -1,9 +1,10 @@
-import { Play } from "../controls/play";
-import { Rewind } from "../controls/rewind";
-import { Forward } from "../controls/forward";
-import { FullScreen } from "../fullscreen/fullscreen";
-import { SoundToggler } from "../soundToggler/soundToggler";
-import { VideoFlip } from "../videoFlip/videoFlip";
+import { Play } from "./play";
+import { Rewind } from "./rewind";
+import { Forward } from "./forward";
+import { TimeIndicator } from "./timeIndicator";
+import { FullScreen } from "./fullscreen";
+import { SoundToggler } from "./soundToggler";
+import { VideoFlip } from "./videoFlip";
 
 export const Controls = () => {
   return (
@@ -12,6 +13,7 @@ export const Controls = () => {
         <Play />
         <Rewind />
         <Forward />
+        <TimeIndicator />
       </div>
       <div>
         <SoundToggler />
