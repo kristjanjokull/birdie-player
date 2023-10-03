@@ -1,0 +1,254 @@
+:root {
+  --bv-yellow: #ecc90a;
+  --bv-green: #076652;
+  --bv-black: #000;
+  --bv-white: #fff;
+
+  --bv-width: 100%;
+  --bv-height: 700px;
+
+  --bv-background: #fff;
+  --bv-dock: rgb(117, 117, 117);
+  --bv-dock-transparent: rgba(117, 117, 117, 0.5);
+  --bv-track-unplayed: hsl(0, 0%, 80.5%);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+[data-theme="dark"] {
+  --bv-background: #000;
+}
+
+.analyzer {
+  position: absolute;
+  width: var(--bv-width);
+  height: var(--bv-height);
+  display: flex;
+  justify-content: center;
+  margin-inline: auto;
+  background-color: var(--bv-background);
+  overflow: hidden;
+}
+
+.dock {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: opacity 150ms ease-in-out;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls__items {
+  display: flex;
+  grid-gap: 10px;
+}
+
+.video-container {
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+.video--flipped {
+  transform: rotateY(180deg);
+}
+
+.timeIndicator {
+  display: flex;
+  align-items: center;
+  color: white;
+  grid-gap: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =============== Rangeslider ===================== */
+.track {
+  position: relative;
+  background: #ffffff40;
+  top: 20px;
+  height: 4px;
+}
+
+.track--transition {
+  transition: "width 0.8s ease-out";
+}
+
+.track--active {
+  background: var(--bv-green);
+}
+
+.horizontalSlider {
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px),
+  screen and (max-width: 480px) {
+  .horizontalSlider {
+    max-width: 400px;
+  }
+}
+
+.thumb {
+  cursor: pointer;
+  position: absolute;
+  z-index: 100;
+  background: var(--bv-green);
+  border: 5px solid var(--bv-green);
+  border-radius: 100%;
+  display: block;
+  box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%);
+  top: 12px;
+  width: 10px;
+  height: 10px;
+  outline: none;
+  line-height: 38;
+}
+
+.thumb:focus-within {
+  box-shadow: 0 0 0 5px rgba(7, 102, 82, 0.3);
+}
+
+.thumb--transition {
+  transition: "left 0.8s ease-out";
+}
+
+/* =============== Radix Slider =============== */
+
+.SliderRoot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  touch-action: none;
+  width: 80%;
+}
+
+.SliderTrack {
+  background-color: white;
+  position: relative;
+  flex-grow: 1;
+  border-radius: 9999px;
+  height: 5px;
+}
+
+.SliderRange {
+  position: absolute;
+  background-color: var(--bv-green);
+  border-radius: 9999px;
+  height: 100%;
+}
+
+.SliderThumb {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.SliderThumb:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px gray;
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.65));
+}
+
+/* =============== Sidebar ===================== */
+.sidebar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 0.5rem;
+  width: 60px;
+  z-index: 2;
+}
+
+/* =============== Button ===================== */
+
+.button {
+  border: none;
+  cursor: pointer;
+}
+
+.button:focus-within {
+  outline-style: solid;
+  outline-color: blue;
+  outline-width: 2;
+}
+
+.button__control {
+  background: none;
+  border-radius: 4px;
+}
+
+.button__control:hover {
+  background: var(--bv-green);
+}
+
+.button__sidebar {
+  background: var(--bv-green);
+  border-radius: 10px;
+}
+
+.button__sidebar:hover {
+  background: hsl(0, 0%, 80.5%);
+}
+
+.button__bigPlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--bv-green);
+  padding: 15px;
+  border-radius: 100%;
+}
+
+.button__bigPlay svg {
+  position: relative;
+  left: 2px;
+}
+
+/* =============== Tooltip ===================== */
+
+.TooltipContent {
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 15px;
+  line-height: 1;
+  color: black;
+  background-color: white;
+  box-shadow:
+    hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
+    hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  user-select: none;
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+div[data-radix-popper-content-wrapper=""] {
+  z-index: 101 !important;
+}
+
+.TooltipArrow {
+  fill: white;
+}
