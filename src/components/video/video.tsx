@@ -1,7 +1,6 @@
 import { FC } from "react";
 
 import { Analyzer } from "../analyzer/analyzer";
-import "../../styles/styles.css";
 
 type VideoProps = {
   src: Array<string>;
