@@ -1,7 +1,7 @@
 export const PlayIcon = () => {
   return (
     <svg
-      fill="var(--bv-white)"
+      fill="var(--bv-color-icon)"
       width="30px"
       height="30px"
       viewBox="0 0 512 512"
