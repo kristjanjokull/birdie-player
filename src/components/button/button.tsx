@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-type ButtonType = "control" | "sidebar" | "big-play";
+type ButtonType = "control" | "big-play";
 
 type ButtonProps = {
   type: ButtonType;
@@ -8,21 +8,6 @@ type ButtonProps = {
   title: string;
   disabled?: boolean;
   children: React.ReactNode;
-};
-
-const getButtonClassName = (type: ButtonType) => {
-  let className = "button ";
-  switch (type) {
-    case "big-play":
-      className += "button__bigPlay";
-      break;
-    case "sidebar":
-      className += "button__sidebar";
-      break;
-    default:
-      className += "button__control";
-  }
-  return className;
 };
 
 export const Button: FC<ButtonProps> = ({
@@ -35,7 +20,7 @@ export const Button: FC<ButtonProps> = ({
   return (
     <button
       type="button"
-      className={getButtonClassName(type)}
+      className={`button ${type === "big-play" ? "button__bigPlay" : ""}`}
       onClick={onClick}
       title={title}
       disabled={disabled}

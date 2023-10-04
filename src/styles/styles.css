@@ -8,7 +8,6 @@
   --bv-color-thumb: var(--bv-color-primary);
   --bv-color-thumb-boxshadow: rgb(0 0 0 / 44%);
   --bv-color-thumb-focus-boxshadow: rgba(7, 102, 82, 0.3);
-
   --bv-color-button: none;
   --bv-color-button-focus: var(--bv-color-primary);
 
