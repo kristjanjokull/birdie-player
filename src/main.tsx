@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import demoswing from "./assets/demoswing2.mp4";
+import "./styles/sandBoxStyles.css";
 
 import { Video } from "./components/video/video";
 

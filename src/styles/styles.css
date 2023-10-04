@@ -15,11 +15,6 @@
   --bv-height: 700px;
 }
 
-body {
-  padding: 0;
-  margin: 0;
-}
-
 .analyzer {
   position: absolute;
   width: var(--bv-width);
