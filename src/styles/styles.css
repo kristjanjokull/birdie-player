@@ -1,23 +1,24 @@
 :root {
   --bv-color-primary: #076652;
   --bv-color-icon: #fff;
+  --bv-color-background: #fff;
+  --bv-color-dock: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  --bv-color-track: #ffffff40;
+  --bv-color-track-active: var(--bv-color-primary);
+  --bv-color-thumb: var(--bv-color-primary);
+  --bv-color-thumb-boxshadow: rgb(0 0 0 / 44%);
+  --bv-color-thumb-focus-boxshadow: rgba(7, 102, 82, 0.3);
+
+  --bv-color-button: none;
+  --bv-color-button-focus: var(--bv-color-primary);
 
   --bv-width: 100%;
   --bv-height: 700px;
-
-  --bv-background: #fff;
-  --bv-dock: rgb(117, 117, 117);
-  --bv-dock-transparent: rgba(117, 117, 117, 0.5);
-  --bv-track-unplayed: hsl(0, 0%, 80.5%);
 }
 
 body {
   padding: 0;
   margin: 0;
-}
-
-[data-theme="dark"] {
-  --bv-background: #000;
 }
 
 .analyzer {
@@ -27,7 +28,7 @@ body {
   display: flex;
   justify-content: center;
   margin-inline: auto;
-  background-color: var(--bv-background);
+  background-color: var(--bv-color-background);
   overflow: hidden;
 }
 
@@ -39,7 +40,7 @@ body {
   z-index: 100;
   transition: opacity 150ms ease-in-out;
   padding: 1rem;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  background: var(--bv-color-dock);
 }
 
 .controls {
@@ -78,7 +79,7 @@ body {
 /* =============== Rangeslider ===================== */
 .track {
   position: relative;
-  background: #ffffff40;
+  background: var(--bv-color-track);
   top: 20px;
   height: 4px;
 }
@@ -88,7 +89,7 @@ body {
 }
 
 .track--active {
-  background: var(--bv-color-primary);
+  background: var(--bv-color-track-active);
 }
 
 .horizontalSlider {
@@ -108,11 +109,11 @@ body {
   cursor: pointer;
   position: absolute;
   z-index: 100;
-  background: var(--bv-color-primary);
-  border: 5px solid var(--bv-color-primary);
+  background: var(--bv-color-thumb);
+  border: 5px solid var(--bv-color-thumb);
   border-radius: 100%;
   display: block;
-  box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%);
+  box-shadow: 0 0 2px 0 var(--bv-color-thumb-boxshadow);
   top: 12px;
   width: 10px;
   height: 10px;
@@ -121,7 +122,7 @@ body {
 }
 
 .thumb:focus-within {
-  box-shadow: 0 0 0 5px rgba(7, 102, 82, 0.3);
+  box-shadow: 0 0 0 5px var(--bv-color-thumb-focus-boxshadow);
 }
 
 .thumb--transition {
@@ -131,8 +132,14 @@ body {
 /* =============== Button ===================== */
 
 .button {
+  background: var(--bv-color-button);
   border: none;
   cursor: pointer;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background: var(--bv-color-primary);
 }
 
 .button:disabled,
@@ -142,26 +149,8 @@ button[disabled] {
 
 .button:focus-within {
   outline-style: solid;
-  outline-color: blue;
-  outline-width: 2;
-}
-
-.button__control {
-  background: none;
-  border-radius: 4px;
-}
-
-.button__control:hover {
-  background: var(--bv-color-primary);
-}
-
-.button__sidebar {
-  background: var(--bv-color-primary);
-  border-radius: 10px;
-}
-
-.button__sidebar:hover {
-  background: hsl(0, 0%, 80.5%);
+  outline-color: var(--bv-color-button-focus);
+  outline-width: 6;
 }
 
 .button__bigPlay {
