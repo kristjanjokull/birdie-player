@@ -1,13 +1,10 @@
-import "../../styles/styles.css";
-
 import { FC } from "react";
 
-import { Theme } from "../../utils/state";
 import { Analyzer } from "../analyzer/analyzer";
+import "../../styles/styles.css";
 
 type VideoProps = {
   src: Array<string>;
-  colorTheme?: Theme;
   width?: string;
   height?: string;
 };
