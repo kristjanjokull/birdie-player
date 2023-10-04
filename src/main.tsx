@@ -1,3 +1,8 @@
+/*
+  Sandbox testing
+  Use 'npm start' to run application
+*/
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import demoswing from "./assets/demoswing2.mp4";
