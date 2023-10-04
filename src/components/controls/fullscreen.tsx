@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useVideoStore } from "../../utils/state";
 
 import { Button } from "../button/button";
@@ -21,11 +21,13 @@ interface FullScreenDocument extends Document {
 }
 
 export const FullScreen: React.FC = () => {
-  const [isFullscreen, setIsFullscreen] = useState(false);
-
-  const { isPlaying } = useVideoStore((state) => ({
-    isPlaying: state.isPlaying,
-  }));
+  const { isPlaying, isFullscreen, setIsFullscreen } = useVideoStore(
+    (state) => ({
+      isPlaying: state.isPlaying,
+      isFullscreen: state.isFullScreen,
+      setIsFullscreen: state.setIsFullScreen,
+    }),
+  );
 
   useEffect(() => {
     function onFullscreenChange() {

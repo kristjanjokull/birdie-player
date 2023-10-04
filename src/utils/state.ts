@@ -6,6 +6,7 @@ interface VideoStore {
   isPlaying: boolean;
   isMuted: boolean;
   isFlipped: boolean;
+  isFullScreen: boolean;
   bigPlayIconHidden: boolean;
   videoDuration: number;
   currentTime: number;
@@ -15,6 +16,7 @@ interface VideoStore {
   setVideoDuration: (duration: number) => void;
   setCurrentTime: (time: number) => void;
   setBigPlayIconHidden: (hidePlay: boolean) => void;
+  setIsFullScreen: (fullScreen: boolean) => void;
   togglePlay: () => void;
   rewind: () => void;
   forward: () => void;
@@ -25,6 +27,7 @@ export const useVideoStore = create<VideoStore>((set) => ({
   isPlaying: false,
   isMuted: true,
   isFlipped: false,
+  isFullScreen: false,
   bigPlayIconHidden: false,
   videoDuration: 0,
   currentTime: 0,
@@ -45,6 +48,7 @@ export const useVideoStore = create<VideoStore>((set) => ({
   setCurrentTime: (time) => set({ currentTime: time }),
   setBigPlayIconHidden: (hidePlayIcon) =>
     set({ bigPlayIconHidden: hidePlayIcon }),
+  setIsFullScreen: (fullScreen) => set({ isFullScreen: fullScreen }),
   togglePlay: () =>
     set((state) => {
       if (!state.videoRef.current) return { isPlaying: state.isPlaying };
