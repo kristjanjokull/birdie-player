@@ -16,6 +16,12 @@ export default defineConfig({
     rollupOptions: {
       external: ["react", "react-dom", "react-slider"],
       output: {
+        assetFileNames: ({ name }) => {
+          if (/\.css$/.test(name ?? "")) {
+            return "css/[name][extname]";
+          }
+          return "assets/[name]-[hash][extname]";
+        },
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
