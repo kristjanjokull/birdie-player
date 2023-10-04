@@ -1,6 +1,5 @@
 :root {
-  --bv-yellow: #ecc90a;
-  --bv-green: #076652;
+  --bv-mainColor: #076652;
   --bv-black: #000;
   --bv-white: #fff;
 
@@ -90,7 +89,7 @@ body {
 }
 
 .track--active {
-  background: var(--bv-green);
+  background: var(--bv-mainColor);
 }
 
 .horizontalSlider {
@@ -110,8 +109,8 @@ body {
   cursor: pointer;
   position: absolute;
   z-index: 100;
-  background: var(--bv-green);
-  border: 5px solid var(--bv-green);
+  background: var(--bv-mainColor);
+  border: 5px solid var(--bv-mainColor);
   border-radius: 100%;
   display: block;
   box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%);
@@ -151,7 +150,7 @@ body {
 
 .SliderRange {
   position: absolute;
-  background-color: var(--bv-green);
+  background-color: var(--bv-mainColor);
   border-radius: 9999px;
   height: 100%;
 }
@@ -206,11 +205,11 @@ button[disabled] {
 }
 
 .button__control:hover {
-  background: var(--bv-green);
+  background: var(--bv-mainColor);
 }
 
 .button__sidebar {
-  background: var(--bv-green);
+  background: var(--bv-mainColor);
   border-radius: 10px;
 }
 
@@ -222,7 +221,7 @@ button[disabled] {
   position: absolute;
   top: 50%;
   left: 50%;
-  background: var(--bv-green);
+  background: var(--bv-mainColor);
   padding: 15px;
   border-radius: 100%;
 }

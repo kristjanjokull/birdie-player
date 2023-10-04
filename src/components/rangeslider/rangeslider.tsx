@@ -1,5 +1,4 @@
 import ReactSlider, { ReactSliderProps } from "react-slider";
-import * as Tooltip from "@radix-ui/react-tooltip";
 
 import { useVideoStore } from "../../utils/state";
 

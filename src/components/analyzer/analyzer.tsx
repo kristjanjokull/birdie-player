@@ -15,14 +15,21 @@ export const Analyzer = ({ src, width, height }: AnalyzerProps) => {
     ...(height ? { height } : {}),
   };
 
-  const { videoRef, isMuted, isFlipped, setVideoDuration, setCurrentTime } =
-    useVideoStore((state) => ({
-      videoRef: state.videoRef,
-      isMuted: state.isMuted,
-      isFlipped: state.isFlipped,
-      setVideoDuration: state.setVideoDuration,
-      setCurrentTime: state.setCurrentTime,
-    }));
+  const {
+    videoRef,
+    isMuted,
+    isFlipped,
+    setVideoDuration,
+    setCurrentTime,
+    togglePlay,
+  } = useVideoStore((state) => ({
+    videoRef: state.videoRef,
+    isMuted: state.isMuted,
+    isFlipped: state.isFlipped,
+    setVideoDuration: state.setVideoDuration,
+    setCurrentTime: state.setCurrentTime,
+    togglePlay: state.togglePlay,
+  }));
 
   return (
     <div className="analyzer" style={videoSize}>
@@ -42,6 +49,9 @@ export const Analyzer = ({ src, width, height }: AnalyzerProps) => {
           onLoadedMetadata={() =>
             videoRef.current && setVideoDuration(videoRef.current.duration)
           }
+          onEnded={() => {
+            togglePlay();
+          }}
         >
           <source src={src} type="video/webm" />
           <source src={src} type="video/mp4" />

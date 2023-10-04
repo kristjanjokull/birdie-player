@@ -1,28 +1,6 @@
 import React, { createRef } from "react";
 import { create } from "zustand";
 
-// =============== Theme store ====================
-
-export type Theme = "light" | "dark";
-
-interface ThemeStore {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
-  toggleTheme: () => void;
-}
-
-export const useThemeStore = create<ThemeStore>((set) => ({
-  theme: "light",
-  setTheme: (theme: Theme) => set({ theme: theme }),
-  toggleTheme: () => {
-    set((state) => ({
-      theme: state.theme === "light" ? "dark" : "light",
-    }));
-  },
-}));
-
-// =============== Video store ====================
-
 interface VideoStore {
   videoRef: React.RefObject<HTMLVideoElement>;
   isPlaying: boolean;
