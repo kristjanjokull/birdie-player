@@ -20,7 +20,7 @@ export default defineConfig({
           if (/\.css$/.test(name ?? "")) {
             return "css/[name][extname]";
           }
-          return "assets/[name]-[hash][extname]";
+          return null;
         },
         globals: {
           react: "React",
