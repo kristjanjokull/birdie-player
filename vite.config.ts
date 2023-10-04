@@ -14,14 +14,13 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "react-slider"],
+      external: [
+        "react",
+        "react-dom",
+        "react-slider",
+        "@babel/runtime/helpers/extends",
+      ],
       output: {
-        assetFileNames: ({ name }) => {
-          if (/\.css$/.test(name ?? "")) {
-            return "css/[name][extname]";
-          }
-          return null;
-        },
         globals: {
           react: "React",
           "react-dom": "ReactDOM",

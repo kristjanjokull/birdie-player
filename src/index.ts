@@ -3,6 +3,6 @@
 */
 
 import { Video } from "./components/video/video";
-import "./styles/styles.css";
+// import "./styles/styles.css";
 
 export { Video };
