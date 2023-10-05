@@ -23,31 +23,27 @@ export const RangeSliderNew = () => {
         min={MIN}
         max={MAX}
         rtl={false}
-        onChange={(values) => setValues(values)}
+        onChange={(values) => {
+          console.log("values: ", values);
+          setValues(values);
+        }}
         renderTrack={({ props, children }) => (
           <div
             onMouseDown={props.onMouseDown}
             onTouchStart={props.onTouchStart}
-            style={{
-              ...props.style,
-              height: "36px",
-              display: "flex",
-              width: "100%",
-            }}
+            className="trackContainer"
+            style={{ ...props.style }}
           >
             <div
               ref={props.ref}
+              className="track"
               style={{
-                height: "5px",
-                width: "100%",
-                borderRadius: "4px",
                 background: getTrackBackground({
                   values,
                   colors: ["#076652", "#ffffff40"],
                   min: MIN,
                   max: MAX,
                 }),
-                alignSelf: "center",
               }}
             >
               {children}

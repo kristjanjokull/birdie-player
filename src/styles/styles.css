@@ -71,11 +71,18 @@
 }
 
 /* =============== Rangeslider ===================== */
+
+.trackContainer {
+  height: 36px;
+  display: flex;
+  width: 100%;
+}
+
 .track {
-  position: relative;
-  background: var(--bv-color-track);
-  top: 20px;
-  height: 4px;
+  width: 100%;
+  height: 5px;
+  border-radius: 4px;
+  align-self: center;
 }
 
 .track--transition {
