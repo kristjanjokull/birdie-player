@@ -22,11 +22,7 @@ export const RangeSliderNew = () => {
         step={STEP}
         min={MIN}
         max={MAX}
-        rtl={false}
-        onChange={(values) => {
-          console.log("values: ", values);
-          setValues(values);
-        }}
+        onChange={(values) => setValues(values)}
         renderTrack={({ props, children }) => (
           <div
             onMouseDown={props.onMouseDown}
