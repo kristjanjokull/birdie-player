@@ -2,6 +2,7 @@ import { useVideoStore } from "../../utils/state";
 import { Rangeslider } from "../rangeslider/rangeslider";
 import { BigPlay } from "../controls/bigPlay";
 import { Controls } from "../controls/controls";
+import { RangeSliderNew } from "../rangesliderNew/rangesliderNew";
 
 type AnalyzerProps = {
   src: string;
@@ -34,7 +35,7 @@ export const Analyzer = ({ src, width, height }: AnalyzerProps) => {
   return (
     <div className="analyzer" style={videoSize}>
       <div className="dock">
-        <Rangeslider />
+        <RangeSliderNew />
         <Controls />
       </div>
       <div className="video-container">
