@@ -101,14 +101,14 @@
 
 .thumb {
   cursor: pointer;
-  position: absolute;
+  /*position: absolute;*/
   z-index: 100;
   background: var(--bv-color-thumb);
   border: 5px solid var(--bv-color-thumb);
   border-radius: 100%;
   display: block;
   box-shadow: 0 0 2px 0 var(--bv-color-thumb-boxshadow);
-  top: 12px;
+  /*top: 12px;*/
   width: 10px;
   height: 10px;
   outline: none;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Range } from "react-range";
+import { Range, getTrackBackground } from "react-range";
 // import { useVideoStore } from "../../utils/state";
 
 const STEP = 0.1;
@@ -41,7 +41,12 @@ export const RangeSliderNew = () => {
                 height: "5px",
                 width: "100%",
                 borderRadius: "4px",
-                background: "green",
+                background: getTrackBackground({
+                  values,
+                  colors: ["#076652", "#ffffff40"],
+                  min: MIN,
+                  max: MAX,
+                }),
                 alignSelf: "center",
               }}
             >
@@ -49,29 +54,8 @@ export const RangeSliderNew = () => {
             </div>
           </div>
         )}
-        renderThumb={({ props, isDragged }) => (
-          <div
-            {...props}
-            style={{
-              ...props.style,
-              height: "42px",
-              width: "42px",
-              borderRadius: "4px",
-              backgroundColor: "#FFF",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              boxShadow: "0px 2px 6px #AAA",
-            }}
-          >
-            <div
-              style={{
-                height: "16px",
-                width: "5px",
-                backgroundColor: isDragged ? "#548BF4" : "#CCC",
-              }}
-            />
-          </div>
+        renderThumb={({ props }) => (
+          <div {...props} className="thumb" style={{ ...props.style }}></div>
         )}
       />
       <output style={{ marginTop: "30px" }} id="output">
