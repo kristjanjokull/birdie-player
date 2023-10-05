@@ -10,13 +10,7 @@ export const RangeSliderNew = () => {
   const [values, setValues] = useState([0]);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        flexWrap: "wrap",
-      }}
-    >
+    <div className="rangesliderContainer">
       <Range
         values={values}
         step={STEP}

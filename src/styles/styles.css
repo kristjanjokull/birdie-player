@@ -72,6 +72,12 @@
 
 /* =============== Rangeslider ===================== */
 
+.rangesliderContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .trackContainer {
   height: 36px;
   display: flex;
