@@ -7,9 +7,9 @@ const MIN = 0;
 const MAX = 100;
 
 export const RangeSliderNew = () => {
-  const [values, setValues] = useState([0]);
+  // const [values, setValues] = useState([0]);
 
-  const { currentTime, videoDuration } = useVideoStore((state) => ({
+  const { videoRef, currentTime, videoDuration } = useVideoStore((state) => ({
     videoRef: state.videoRef,
     isPlaying: state.isPlaying,
     currentTime: state.currentTime,
@@ -20,6 +20,13 @@ export const RangeSliderNew = () => {
   const value = videoDuration > 0 ? (currentTime / videoDuration) * 100 : 0;
   const valueFixed = Number(value.toFixed(1));
 
+  const handleChange = (v: number) => {
+    if (videoRef.current) {
+      const newTime = (v / 100) * videoDuration;
+      videoRef.current.currentTime = newTime;
+    }
+  };
+
   return (
     <div className="rangesliderContainer">
       <Range
@@ -27,7 +34,7 @@ export const RangeSliderNew = () => {
         step={STEP}
         min={MIN}
         max={MAX}
-        onChange={(values) => setValues(values)}
+        onChange={(values) => handleChange(values[0])}
         renderTrack={({ props, children }) => (
           <div
             onMouseDown={props.onMouseDown}
@@ -40,7 +47,7 @@ export const RangeSliderNew = () => {
               className="track"
               style={{
                 background: getTrackBackground({
-                  values,
+                  values: [valueFixed],
                   colors: ["#076652", "#ffffff40"],
                   min: MIN,
                   max: MAX,
@@ -55,10 +62,6 @@ export const RangeSliderNew = () => {
           <div {...props} className="thumb" style={{ ...props.style }}></div>
         )}
       />
-      <output style={{ marginTop: "30px" }} id="output">
-        {values[0]}
-      </output>
-      <br />
       <div style={{ width: "100%", margin: "0 auto" }}>{valueFixed}</div>
     </div>
   );
