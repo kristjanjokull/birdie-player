@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Range, getTrackBackground } from "react-range";
-// import { useVideoStore } from "../../utils/state";
+import { useVideoStore } from "../../utils/state";
 
 const STEP = 0.1;
 const MIN = 0;
@@ -9,10 +9,21 @@ const MAX = 100;
 export const RangeSliderNew = () => {
   const [values, setValues] = useState([0]);
 
+  const { currentTime, videoDuration } = useVideoStore((state) => ({
+    videoRef: state.videoRef,
+    isPlaying: state.isPlaying,
+    currentTime: state.currentTime,
+    videoDuration: state.videoDuration,
+    setBigPlayIconHidden: state.setBigPlayIconHidden,
+  }));
+
+  const value = videoDuration > 0 ? (currentTime / videoDuration) * 100 : 0;
+  const valueFixed = Number(value.toFixed(1));
+
   return (
     <div className="rangesliderContainer">
       <Range
-        values={values}
+        values={[valueFixed]}
         step={STEP}
         min={MIN}
         max={MAX}
@@ -45,8 +56,10 @@ export const RangeSliderNew = () => {
         )}
       />
       <output style={{ marginTop: "30px" }} id="output">
-        {values[0].toFixed(1)}
+        {values[0]}
       </output>
+      <br />
+      <div style={{ width: "100%", margin: "0 auto" }}>{valueFixed}</div>
     </div>
   );
 };
