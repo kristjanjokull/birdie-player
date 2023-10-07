@@ -1,48 +1,39 @@
 {
-  "name": "birdie-player",
-  "version": "1.0.8",
-  "description": "Golf video player written in react",
-  "license": "ISC",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
+  "name": "tsup-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "start": "vite --host --open",
-    "build": "tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
-    "watch": "tsc && vite build --watch",
-    "lint:scripts": "eslint . --ext .ts",
-    "lint:styles": "stylelint ./**/*.{css,scss}",
-    "format:scripts": "prettier . --write",
-    "format:styles": "stylelint ./**/*.{css,scss} --fix"
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "ladle serve",
+    "lint": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@ladle/react": "^3.2.1",
+    "@types/react": "^18.2.25",
+    "@types/react-dom": "^18.2.10",
+    "prettier": "3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "dependencies": {
+    "@types/react-slider": "^1.3.2",
     "react-range": "^1.8.14",
     "react-slider": "^2.0.6",
-    "zustand": "^4.3.9"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
-    "@types/react-slider": "^1.3.2",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "@typescript-eslint/parser": "^6.4.0",
-    "@vitejs/plugin-react": "^4.0.4",
-    "dts-bundle-generator": "^8.0.1",
-    "eslint": "^8.47.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "^3.0.2",
-    "stylelint": "^15.10.3",
-    "stylelint-config-recommended": "^13.0.0",
-    "stylelint-config-sass-guidelines": "^10.0.0",
-    "ts-node": "^10.9.1",
-    "tslib": "^2.6.2",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.9"
+    "zustand": "^4.4.3"
   }
 }
