@@ -6,4 +6,4 @@ import demoswing from "@/assets/demoswing2.mp4";
 export default {
   title: "Video",
 };
-export const VideoComponent = () => <Video />;
+export const VideoComponent = () => <Video src={demoswing} />;
