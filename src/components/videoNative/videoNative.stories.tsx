@@ -9,3 +9,4 @@ export default {
   title: "Video Native",
 };
 export const VideoComponent: Story = () => <VideoNative src={demoswing} />;
+VideoComponent.storyName = "Video Native";
