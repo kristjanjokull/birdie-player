@@ -1,7 +1,10 @@
-.bv-videoContainer {
+/* components/video/video */
+
+.bv-video-container {
   width: 100%;
 }
 
 .bv-video {
   width: 100%;
+  height: 100%;
 }
