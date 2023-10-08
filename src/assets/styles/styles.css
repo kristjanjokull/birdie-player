@@ -1,5 +1,7 @@
 :root {
   --bp-color-primary: #076652;
+  --bp-color-icon: #fff;
+  --bp-color-button: none;
 }
 
 /* components/video/video */
@@ -13,7 +15,18 @@
   height: 100%;
 }
 
-/* components/bigPlayer/bigPlayer */
+/* components/button/button */
+.bp-button {
+  background: var(--bp-color-button);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.bp-button:hover {
+  background: var(--bp-color-primary);
+}
+
 .bp-button__bigPlay {
   position: absolute;
   top: 50%;

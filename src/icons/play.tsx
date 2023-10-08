@@ -3,7 +3,7 @@ import React from "react";
 export const PlayIcon = () => {
   return (
     <svg
-      fill="var(--bv-color-icon)"
+      fill="var(--bp-color-icon)"
       width="30px"
       height="30px"
       viewBox="0 0 512 512"
