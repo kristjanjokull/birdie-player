@@ -20,7 +20,7 @@ export const Button: FC<ButtonProps> = ({
   return (
     <button
       type="button"
-      className={`bp-button ${type === "big-play" ? "pb-button__bigPlay" : ""}`}
+      className={`bp-button ${type === "big-play" ? "bp-button__bigPlay" : ""}`}
       onClick={onClick}
       title={title}
       disabled={disabled}
