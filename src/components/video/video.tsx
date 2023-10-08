@@ -1,4 +1,5 @@
 import React from "react";
+import { BigPlay } from "@/components/bigPlay/bigPlay";
 
 type VideoProps = {
   src: string;
@@ -12,8 +13,9 @@ export const Video = ({ src, width, height }: VideoProps) => {
     ...(height ? { height } : {}),
   };
   return (
-    <div className="bv-video-container" style={videoSize}>
-      <video className="bv-video" controls>
+    <div className="bp-videoContainer" style={videoSize}>
+      <BigPlay />
+      <video className="bp-video" controls>
         <source src={src} type="video/webm" />
         <source src={src} type="video/mp4" />
         <p>

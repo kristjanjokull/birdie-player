@@ -12,8 +12,8 @@ export const VideoNative = ({ src, width, height }: VideoProps) => {
     ...(height ? { height } : {}),
   };
   return (
-    <div className="bv-videoContainer" style={videoSize}>
-      <video className="bv-video" controls>
+    <div className="bp-videoContainer" style={videoSize}>
+      <video className="bp-video" controls>
         <source src={src} type="video/webm" />
         <source src={src} type="video/mp4" />
         <p>
