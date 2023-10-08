@@ -14,7 +14,6 @@ export const Video = ({ src, width, height }: VideoProps) => {
   };
   return (
     <div className="bp-videoContainer" style={videoSize}>
-      <BigPlay />
       <video className="bp-video">
         <source src={src} type="video/webm" />
         <source src={src} type="video/mp4" />
@@ -23,6 +22,7 @@ export const Video = ({ src, width, height }: VideoProps) => {
           <a href="myVideo.mp4">link to the video</a> instead.
         </p>
       </video>
+      <BigPlay />
     </div>
   );
 };
