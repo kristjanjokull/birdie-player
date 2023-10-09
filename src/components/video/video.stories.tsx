@@ -21,12 +21,15 @@ export const VideoComponent: Story<ControlProps> = ({
   width,
   height,
 }) => {
-  const vidSrc = videoType === "landscape" ? landscapeSwing : portraitSwing;
   return (
-    <div>
+    <>
       <p>Video type: {videoTypeOptions}</p>
-      <Video src={vidSrc} width={width} height={height} />
-    </div>
+      <Video
+        src={videoType === "landscape" ? landscapeSwing : portraitSwing}
+        width={width}
+        height={height}
+      />
+    </>
   );
 };
 VideoComponent.storyName = "Video";
