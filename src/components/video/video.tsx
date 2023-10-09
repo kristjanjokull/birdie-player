@@ -27,13 +27,13 @@ export const Video = ({ src, width, height }: VideoProps) => {
     <div className="bp-videoContainer" style={videoSize}>
       <video
         ref={videoRef}
+        className="bp-video"
         onTimeUpdate={() =>
           videoRef.current && setCurrentTime(videoRef.current.currentTime)
         }
         onLoadedMetadata={() =>
           videoRef.current && setVideoDuration(videoRef.current.duration)
         }
-        className="bp-video"
       >
         <source src={src} type="video/webm" />
         <source src={src} type="video/mp4" />
