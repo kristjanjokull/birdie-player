@@ -8,7 +8,7 @@ export const TimeIndicator = () => {
   }));
 
   return (
-    <div className="timeIndicator">
+    <div className="bp-timeIndicator">
       <span>{currentTime.toFixed(2)}</span>
       <span>/</span>
       <span>{videoRef.current?.duration.toFixed(2)}</span>

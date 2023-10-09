@@ -11,13 +11,13 @@ import { VideoFlip } from "@/components/controls/videoFlip";
 export const Controls = () => {
   return (
     <div className="bp-controls">
-      <div>
+      <div className="bp-controls__items">
         <Play />
         <Rewind />
         <Forward />
         <TimeIndicator />
       </div>
-      <div>
+      <div className="bp-controls__items">
         <SoundToggler />
         <VideoFlip />
         <FullScreen />

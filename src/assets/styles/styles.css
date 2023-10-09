@@ -95,3 +95,17 @@
   display: flex;
   justify-content: space-between;
 }
+
+.bp-controls__items {
+  display: flex;
+  grid-gap: 10px;
+}
+
+/* components/controls/timeIndicator */
+.bp-timeIndicator {
+  display: flex;
+  align-items: center;
+  color: var(--bp-color-icon);
+  grid-gap: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
