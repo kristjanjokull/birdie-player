@@ -89,3 +89,9 @@
 .bp-thumb:focus-within {
   box-shadow: 0 0 0 5px var(--bp-color-thumb-focus-boxshadow);
 }
+
+/* components/controls/controls */
+.bp-controls {
+  display: flex;
+  justify-content: space-between;
+}
