@@ -1,4 +1,5 @@
 import React from "react";
+import { useVideoStore } from "@/utils/state";
 import { BigPlay } from "@/components/bigPlay/bigPlay";
 import { Dock } from "@/components/dock/dock";
 
@@ -13,9 +14,14 @@ export const Video = ({ src, width, height }: VideoProps) => {
     ...(width ? { width } : {}),
     ...(height ? { height } : {}),
   };
+
+  const { videoRef } = useVideoStore((state) => ({
+    videoRef: state.videoRef,
+  }));
+
   return (
     <div className="bp-videoContainer" style={videoSize}>
-      <video className="bp-video">
+      <video ref={videoRef} className="bp-video">
         <source src={src} type="video/webm" />
         <source src={src} type="video/mp4" />
         <p>
