@@ -7,9 +7,15 @@ type VideoProps = {
   src: string;
   width?: string;
   height?: string;
+  orientation?: "landscape" | "portrait";
 };
 
-export const Video = ({ src, width, height }: VideoProps) => {
+export const Video = ({
+  src,
+  width,
+  height,
+  orientation = "landscape",
+}: VideoProps) => {
   const videoSize = {
     ...(width ? { width } : {}),
     ...(height ? { height } : {}),
@@ -24,7 +30,12 @@ export const Video = ({ src, width, height }: VideoProps) => {
   );
 
   return (
-    <div className="bp-videoContainer" style={videoSize}>
+    <div
+      className={`bp-videoContainer ${
+        orientation === "portrait" ? "bp-videoContainer--portrait" : ""
+      }`}
+      style={videoSize}
+    >
       <video
         ref={videoRef}
         className="bp-video"

@@ -9,14 +9,19 @@
   --bp-color-thumb-focus-boxshadow: rgba(7, 102, 82, 0.3);
 
   --bp-video-width: 100%;
-  --bp-video-height: 700px;
+  --bp-video-height-landscape: auto;
+  --bp-video-height-portrait: 550px;
 }
 
 /* components/video/video */
 .bp-videoContainer {
   width: var(--bp-video-width);
-  height: var(--bp-video-height);
+  height: var(--bp-video-height-landscape);
   position: relative;
+}
+
+.bp-videoContainer--portrait {
+  height: var(--bp-video-height-portrait) !important;
 }
 
 .bp-video {
