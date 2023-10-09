@@ -4,6 +4,9 @@
   --bp-color-button: none;
   --bp-color-dock: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
   --bv-color-track: #ffffff40;
+  --bp-color-thumb: var(--bp-color-primary);
+  --bp-color-thumb-boxshadow: rgb(0 0 0 / 44%);
+  --bp-color-thumb-focus-boxshadow: rgba(7, 102, 82, 0.3);
 }
 
 /* components/video/video */
@@ -69,13 +72,20 @@
   align-self: center;
 }
 
-.bp-thumb__wrapper {
-  width: 42px;
-  height: 42px;
-  border-radius: 4px;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 2px 6px #aaa;
+.bp-thumb {
+  cursor: pointer;
+  z-index: 100;
+  background: var(--bp-color-thumb);
+  border: 5px solid var(--bp-color-thumb);
+  border-radius: 100%;
+  display: block;
+  box-shadow: 0 0 2px 0 var(--bp-color-thumb-boxshadow);
+  width: 10px;
+  height: 10px;
+  outline: none;
+  line-height: 38;
+}
+
+.bp-thumb:focus-within {
+  box-shadow: 0 0 0 5px var(--bp-color-thumb-focus-boxshadow);
 }

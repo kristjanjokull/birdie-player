@@ -42,19 +42,7 @@ export const RangeComponent = () => {
           </div>
         )}
         renderThumb={({ props, isDragged }) => (
-          <div
-            {...props}
-            className="bp-thumb__wrapper"
-            style={{ ...props.style }}
-          >
-            <div
-              style={{
-                height: "16px",
-                width: "5px",
-                backgroundColor: isDragged ? "#548BF4" : "#CCC",
-              }}
-            />
-          </div>
+          <div {...props} className="bp-thumb" style={{ ...props.style }}></div>
         )}
       />
       <output style={{ marginTop: "30px" }} id="output">
