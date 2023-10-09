@@ -2,6 +2,7 @@
   --bp-color-primary: #076652;
   --bp-color-icon: #fff;
   --bp-color-button: none;
+  --bp-color-dock: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
 }
 
 /* components/video/video */
@@ -35,4 +36,17 @@
   background: var(--bp-color-primary);
   padding: 15px;
   border-radius: 100%;
+}
+
+/* components/dock/dock */
+
+.bp-dock {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: opacity 150ms ease-in-out;
+  padding: 1rem;
+  background: var(--bp-color-dock);
 }

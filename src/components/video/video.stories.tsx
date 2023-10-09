@@ -3,7 +3,6 @@ import type { Story } from "@ladle/react";
 
 import { Video } from "@/components/video/video";
 import demoswing from "@/assets/demoswing2.mp4";
-import "@/assets/styles/styles.css";
 
 type ControlProps = {
   width: string;

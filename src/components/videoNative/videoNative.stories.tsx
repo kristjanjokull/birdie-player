@@ -3,7 +3,6 @@ import type { Story } from "@ladle/react";
 
 import { VideoNative } from "@/components/videoNative/videoNative";
 import demoswing from "@/assets/demoswing2.mp4";
-import "@/assets/styles/styles.css";
 
 type ControlProps = {
   width: string;

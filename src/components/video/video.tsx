@@ -1,5 +1,6 @@
 import React from "react";
 import { BigPlay } from "@/components/bigPlay/bigPlay";
+import { Dock } from "@/components/dock/dock";
 
 type VideoProps = {
   src: string;
@@ -23,6 +24,7 @@ export const Video = ({ src, width, height }: VideoProps) => {
         </p>
       </video>
       <BigPlay />
+      <Dock />
     </div>
   );
 };
