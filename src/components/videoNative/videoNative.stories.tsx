@@ -1,10 +1,14 @@
 import React from "react";
 import type { Story } from "@ladle/react";
 
-import { VideoNative } from "@/components/videoNative/videoNative";
-import demoswing from "@/assets/demoswing2.mp4";
+import landscapeSwing from "@/assets/landscape.mp4";
+import portraitSwing from "@/assets/portrait.mp4";
+import { VideoNative } from "./videoNative";
+
+const videoTypeOptions = ["landscape", "portrait"] as const;
 
 type ControlProps = {
+  videoType: (typeof videoTypeOptions)[number];
   width: string;
   height: string;
 };
@@ -12,17 +16,36 @@ type ControlProps = {
 export default {
   title: "Video Native",
 };
-export const VideoComponent: Story<ControlProps> = ({ width, height }) => (
-  <VideoNative src={demoswing} width={width} height={height} />
-);
+export const VideoComponent: Story<ControlProps> = ({
+  videoType,
+  width,
+  height,
+}) => {
+  return (
+    <>
+      <p>Video type: {videoType}</p>
+      <VideoNative
+        src={videoType === "landscape" ? landscapeSwing : portraitSwing}
+        width={width}
+        height={height}
+      />
+    </>
+  );
+};
 VideoComponent.storyName = "Video Native";
 
 VideoComponent.args = {
+  videoType: "landscape",
   width: "100%",
-  height: "auto",
+  height: "700px",
 };
 
 VideoComponent.argTypes = {
+  videoType: {
+    name: "Video type",
+    options: videoTypeOptions,
+    control: { type: "radio" },
+  },
   width: {
     control: { type: "text" },
   },
