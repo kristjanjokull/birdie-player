@@ -36,6 +36,9 @@
   background: var(--bp-color-primary);
   padding: 15px;
   border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* components/dock/dock */
