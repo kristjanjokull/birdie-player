@@ -3,6 +3,7 @@
   --bp-color-icon: #fff;
   --bp-color-button: none;
   --bp-color-dock: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  --bv-color-track: #ffffff40;
 }
 
 /* components/video/video */

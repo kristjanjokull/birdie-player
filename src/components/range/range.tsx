@@ -5,6 +5,9 @@ const STEP = 0.1;
 const MIN = 0;
 const MAX = 100;
 
+const TRACK_COLOR_ACTIVE = "#076652";
+const TRACK_COLOR = "#ffffff40";
+
 export const RangeComponent = () => {
   const [values, setValues] = useState([0]);
   return (
@@ -28,7 +31,7 @@ export const RangeComponent = () => {
               style={{
                 background: getTrackBackground({
                   values,
-                  colors: ["#548BF4", "#ccc"],
+                  colors: [TRACK_COLOR_ACTIVE, TRACK_COLOR],
                   min: MIN,
                   max: MAX,
                 }),
