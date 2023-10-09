@@ -14,7 +14,8 @@
 
 /* components/video/video */
 .bp-videoContainer {
-  width: 100%;
+  width: var(--bp-video-width);
+  height: var(--bp-video-height);
   position: relative;
 }
 

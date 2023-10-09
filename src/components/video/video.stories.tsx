@@ -23,7 +23,7 @@ export const VideoComponent: Story<ControlProps> = ({
 }) => {
   return (
     <>
-      <p>Video type: {videoTypeOptions}</p>
+      <p>Video type: {videoType}</p>
       <Video
         src={videoType === "landscape" ? landscapeSwing : portraitSwing}
         width={width}
@@ -37,7 +37,7 @@ VideoComponent.storyName = "Video";
 VideoComponent.args = {
   videoType: "landscape",
   width: "100%",
-  height: "auto",
+  height: "700px",
 };
 
 VideoComponent.argTypes = {
