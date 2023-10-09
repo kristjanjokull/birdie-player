@@ -7,6 +7,9 @@
   --bp-color-thumb: var(--bp-color-primary);
   --bp-color-thumb-boxshadow: rgb(0 0 0 / 44%);
   --bp-color-thumb-focus-boxshadow: rgba(7, 102, 82, 0.3);
+
+  --bp-video-width: 100%;
+  --bp-video-height: 700px;
 }
 
 /* components/video/video */
