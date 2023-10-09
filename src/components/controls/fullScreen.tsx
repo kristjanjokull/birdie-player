@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useVideoStore } from "@/utils/state";
 import { Button } from "@/components/button/button";
 import { FullscreenIcon } from "@/icons/fullScreen";
-import { FullscreenExitIcon } from "@/icons/fullscreenExit";
+import { FullscreenExitIcon } from "@/icons/fullScreenExit";
 
 type FullscreenFunctionTypes = () => Promise<void>;
 
