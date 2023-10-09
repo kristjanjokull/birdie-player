@@ -19,26 +19,19 @@ export const RangeComponent = () => {
           <div
             onMouseDown={props.onMouseDown}
             onTouchStart={props.onTouchStart}
-            style={{
-              ...props.style,
-              height: "36px",
-              display: "flex",
-              width: "100%",
-            }}
+            className="bp-track__wrapper"
+            style={{ ...props.style }}
           >
             <div
               ref={props.ref}
+              className="bp-track"
               style={{
-                height: "5px",
-                width: "100%",
-                borderRadius: "4px",
                 background: getTrackBackground({
                   values,
                   colors: ["#548BF4", "#ccc"],
                   min: MIN,
                   max: MAX,
                 }),
-                alignSelf: "center",
               }}
             >
               {children}
@@ -48,17 +41,8 @@ export const RangeComponent = () => {
         renderThumb={({ props, isDragged }) => (
           <div
             {...props}
-            style={{
-              ...props.style,
-              height: "42px",
-              width: "42px",
-              borderRadius: "4px",
-              backgroundColor: "#FFF",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              boxShadow: "0px 2px 6px #AAA",
-            }}
+            className="bp-thumb__wrapper"
+            style={{ ...props.style }}
           >
             <div
               style={{

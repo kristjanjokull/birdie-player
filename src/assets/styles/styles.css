@@ -53,3 +53,28 @@
   padding: 1rem;
   background: var(--bp-color-dock);
 }
+
+/* components/range/range */
+.bp-track__wrapper {
+  display: flex;
+  width: 100%;
+  height: 36px;
+}
+
+.bp-track {
+  width: 100%;
+  height: 5px;
+  border-radius: 4px;
+  align-self: center;
+}
+
+.bp-thumb__wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 6px #aaa;
+}
