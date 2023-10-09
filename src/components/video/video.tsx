@@ -15,13 +15,26 @@ export const Video = ({ src, width, height }: VideoProps) => {
     ...(height ? { height } : {}),
   };
 
-  const { videoRef } = useVideoStore((state) => ({
-    videoRef: state.videoRef,
-  }));
+  const { videoRef, setVideoDuration, setCurrentTime } = useVideoStore(
+    (state) => ({
+      videoRef: state.videoRef,
+      setVideoDuration: state.setVideoDuration,
+      setCurrentTime: state.setCurrentTime,
+    }),
+  );
 
   return (
     <div className="bp-videoContainer" style={videoSize}>
-      <video ref={videoRef} className="bp-video">
+      <video
+        ref={videoRef}
+        onTimeUpdate={() =>
+          videoRef.current && setCurrentTime(videoRef.current.currentTime)
+        }
+        onLoadedMetadata={() =>
+          videoRef.current && setVideoDuration(videoRef.current.duration)
+        }
+        className="bp-video"
+      >
         <source src={src} type="video/webm" />
         <source src={src} type="video/mp4" />
         <p>
