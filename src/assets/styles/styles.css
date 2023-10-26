@@ -79,6 +79,7 @@
   height: 5px;
   border-radius: 4px;
   align-self: center;
+  transition: background 0.1s ease-out; /* to smouth out */
 }
 
 .bp-thumb {
@@ -93,6 +94,7 @@
   height: 10px;
   outline: none;
   line-height: 38;
+  transition: left 0.1s ease-out; /* to smouth out */
 }
 
 .bp-thumb:focus-within {
