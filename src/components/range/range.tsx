@@ -19,12 +19,12 @@ export const RangeComponent = () => {
     }),
   );
 
+  const [values, setValues] = useState([0]);
+
   // Update values when currentTime or videoDuration changes
   useEffect(() => {
     setValues([(currentTime / videoDuration) * 100]);
   }, [currentTime, videoDuration]);
-
-  const [values, setValues] = useState([0]);
   return (
     <div>
       <Range
