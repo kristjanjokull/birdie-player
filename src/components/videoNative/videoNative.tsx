@@ -4,15 +4,26 @@ type VideoProps = {
   src: string;
   width?: string;
   height?: string;
+  orientation?: "landscape" | "portrait";
 };
 
-export const VideoNative = ({ src, width, height }: VideoProps) => {
+export const VideoNative = ({
+  src,
+  width,
+  height,
+  orientation = "landscape",
+}: VideoProps) => {
   const videoSize = {
     ...(width ? { width } : {}),
     ...(height ? { height } : {}),
   };
   return (
-    <div className="bp-videoContainer" style={videoSize}>
+    <div
+      className={`bp-videoContainer ${
+        orientation === "portrait" ? "bp-videoContainer--portrait" : ""
+      }`}
+      style={videoSize}
+    >
       <video className="bp-video" controls>
         <source src={src} type="video/webm" />
         <source src={src} type="video/mp4" />

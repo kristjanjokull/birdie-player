@@ -1,8 +1,5 @@
-// import { Button } from "./button/button";
-import { Button } from "@/button/button";
+import { Video } from "@/components/video/video";
+import { VideoNative } from "@/components/videoNative/videoNative";
+import "./assets/styles/styles.css";
 
-var add = (a: number, b: number) => {
-  return a + b;
-};
-
-export { add, Button };
+export { Video, VideoNative };

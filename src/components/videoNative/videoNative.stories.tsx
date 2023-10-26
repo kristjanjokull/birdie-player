@@ -5,10 +5,10 @@ import landscapeSwing from "@/assets/landscape.mp4";
 import portraitSwing from "@/assets/portrait.mp4";
 import { VideoNative } from "./videoNative";
 
-const videoTypeOptions = ["landscape", "portrait"] as const;
+const orientationOptions = ["landscape", "portrait"] as const;
 
 type ControlProps = {
-  videoType: (typeof videoTypeOptions)[number];
+  orientation: (typeof orientationOptions)[number];
   width: string;
   height: string;
 };
@@ -17,17 +17,18 @@ export default {
   title: "Video Native",
 };
 export const VideoComponent: Story<ControlProps> = ({
-  videoType,
+  orientation,
   width,
   height,
 }) => {
   return (
     <>
-      <p>Video type: {videoType}</p>
+      <p>Orientation: {orientation}</p>
       <VideoNative
-        src={videoType === "landscape" ? landscapeSwing : portraitSwing}
+        src={orientation === "landscape" ? landscapeSwing : portraitSwing}
         width={width}
         height={height}
+        orientation={orientation}
       />
     </>
   );
@@ -35,15 +36,15 @@ export const VideoComponent: Story<ControlProps> = ({
 VideoComponent.storyName = "Video Native";
 
 VideoComponent.args = {
-  videoType: "landscape",
+  orientation: "landscape",
   width: "100%",
   height: "700px",
 };
 
 VideoComponent.argTypes = {
-  videoType: {
+  orientation: {
     name: "Video type",
-    options: videoTypeOptions,
+    options: orientationOptions,
     control: { type: "radio" },
   },
   width: {
